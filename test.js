@@ -207,3 +207,12 @@ const base64Decode = require('./')
 
   assert.strictEqual(actual.join(), expected.join())
 }
+
+{
+  const actual = new Uint8Array(1)
+  const expected = new Uint8Array([73])
+
+  base64Decode('SQ==QU0=', actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
