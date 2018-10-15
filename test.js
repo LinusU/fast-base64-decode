@@ -216,3 +216,14 @@ const base64Decode = require('./')
 
   assert.strictEqual(actual.join(), expected.join())
 }
+
+{
+  const actual = new Uint8Array(9)
+  const expected = new Uint8Array([0xff, 0xff, 0xbe, 0xff, 0xef, 0xbf, 0xfb, 0xef, 0xff])
+
+  base64Decode('//++/++/++//', actual)
+  assert.strictEqual(actual.join(), expected.join())
+
+  base64Decode('__--_--_--__', actual)
+  assert.strictEqual(actual.join(), expected.join())
+}
