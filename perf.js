@@ -28,7 +28,7 @@ const base64Decode = require('./')
   const encoded = data.toString('base64')
   const iterations = 10 * 1024 * 1024
 
-  console.time(`decode 32B x10M`)
+  console.time('decode 32B x10M')
   for (let i = 0; i < iterations; i++) base64Decode(encoded, target)
-  console.timeEnd(`decode 32B x10M`)
+  console.timeEnd('decode 32B x10M')
 }

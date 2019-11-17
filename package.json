@@ -7,7 +7,7 @@
     "test": "standard && node test"
   },
   "devDependencies": {
-    "standard": "^11.0.1"
+    "standard": "^14.3.1"
   },
   "keywords": [
     "base64-decode",
