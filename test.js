@@ -198,3 +198,51 @@ const base64Decode = require('./')
 
   assert.strictEqual(actual.join(), expected.join())
 }
+
+{
+  var actual = new Uint8Array(64)
+  var expected = new Uint8Array(64)
+  var str = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=='
+
+  base64Decode(str, expected)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
+
+{
+  var actual = new Uint8Array(1)
+  var expected = new Uint8Array([73])
+  var str = 'SQ==QU0='
+
+  base64Decode(str, actual)
+
+  assert.strictEqual(actual.join(), expected.join())
+}
+
+{
+  var expected = [0xff, 0xff, 0xbe, 0xff, 0xef, 0xbf, 0xfb, 0xef, 0xff]
+  var expectedBuffer = [ 255, 255, 190, 255, 239, 191, 251, 239, 255 ]
+  var actual = new Uint8Array(9)
+
+  {
+    var str1 = '//++/++/++//'
+    base64Decode(str1, actual)
+
+    assert.strictEqual(actual.join(), expectedBuffer.join())
+
+    for (var i = 0; i < actual.length; i++) {
+      assert.strictEqual(actual[i], expected[i])
+    }
+  }
+
+  {
+    var str2 = '__--_--_--__'
+    base64Decode(str2, actual)
+
+    assert.strictEqual(actual.join(), expectedBuffer.join())
+
+    for (var i = 0; i < actual.length; i++) {
+      assert.strictEqual(actual[i], expected[i])
+    }
+  }
+}
