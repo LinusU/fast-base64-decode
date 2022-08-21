@@ -11,7 +11,7 @@ npm install --save fast-base64-decode
 ## Usage
 
 ```js
-const base64Decode = require('fast-base64-decode')
+import base64Decode from 'fast-base64-decode'
 
 // You need to know the length of the decoded data
 const result = new Uint8Array(13)
