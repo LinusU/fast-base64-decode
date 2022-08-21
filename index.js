@@ -46,4 +46,6 @@ export default function base64Decode (source, target) {
 
     target[byteIndex++] = tmp & 0xFF
   }
+
+  return target
 }
