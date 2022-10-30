@@ -2,12 +2,16 @@
   "name": "fast-base64-decode",
   "version": "1.0.0",
   "license": "MIT",
+  "type": "module",
   "repository": "LinusU/fast-base64-decode",
   "scripts": {
     "test": "standard && node test"
   },
+  "engines": {
+    "node": ">=14"
+  },
   "devDependencies": {
-    "standard": "^14.3.1"
+    "standard": "^17.0.0"
   },
   "keywords": [
     "base64-decode",
