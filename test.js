@@ -235,3 +235,16 @@ function assertArrayEqual (actual, expected) {
   base64Decode('__--_--_--__', actual)
   assertArrayEqual(actual, expected)
 }
+
+{
+  const actual = new Uint8Array(64 * 1024 * 1024)
+  const expected = Buffer.alloc(64 * 1024 * 1024)
+
+  for (let i = 0, length = expected.length; i < length; ++i) {
+    expected[i] = i % 256
+  }
+
+  base64Decode(expected.toString('base64'), actual)
+
+  assertArrayEqual(actual, expected)
+}
