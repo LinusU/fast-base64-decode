@@ -1,13 +1,21 @@
 const assert = require('assert')
 const base64Decode = require('./')
 
+function assertArrayEqual (actual, expected) {
+  assert.strictEqual(actual.length, expected.length)
+
+  for (let i = 0, length = actual.length; i < length; i++) {
+    assert.strictEqual(actual[i], expected[i])
+  }
+}
+
 {
   const actual = new Uint8Array(0)
   const expected = new Uint8Array([])
 
   base64Decode('', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -16,7 +24,7 @@ const base64Decode = require('./')
 
   base64Decode('aA==', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -25,7 +33,7 @@ const base64Decode = require('./')
 
   base64Decode('bLE=', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -34,7 +42,7 @@ const base64Decode = require('./')
 
   base64Decode('WSyq', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -43,7 +51,7 @@ const base64Decode = require('./')
 
   base64Decode('TusH2Q==', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -52,7 +60,7 @@ const base64Decode = require('./')
 
   base64Decode('MViNEU4=', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -61,7 +69,7 @@ const base64Decode = require('./')
 
   base64Decode('0y3UuBMSc26VTuhf9g/tnYCW3Z8=', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -70,7 +78,7 @@ const base64Decode = require('./')
 
   base64Decode('njqp7i70FcEETp9Ta/oC2dXebXyH', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -79,7 +87,7 @@ const base64Decode = require('./')
 
   base64Decode('KwZA+eR5264YWpv+xujQ9PgLnSqCWw==', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -88,7 +96,7 @@ const base64Decode = require('./')
 
   base64Decode('aGkhIQ==', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -97,7 +105,7 @@ const base64Decode = require('./')
 
   base64Decode('YWFh', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -106,7 +114,7 @@ const base64Decode = require('./')
 
   base64Decode('aGk=', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -115,7 +123,7 @@ const base64Decode = require('./')
 
   base64Decode('aGkh', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -124,7 +132,7 @@ const base64Decode = require('./')
 
   base64Decode('c3Vw', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -133,7 +141,7 @@ const base64Decode = require('./')
 
   base64Decode('c3VwPyE=', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -142,7 +150,7 @@ const base64Decode = require('./')
 
   base64Decode('TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQ=', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -151,7 +159,7 @@ const base64Decode = require('./')
 
   base64Decode('Zg==', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -160,7 +168,7 @@ const base64Decode = require('./')
 
   base64Decode('Zm8=', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -169,7 +177,7 @@ const base64Decode = require('./')
 
   base64Decode('Zm9v', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -178,7 +186,7 @@ const base64Decode = require('./')
 
   base64Decode('Zm9vYg==', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -187,7 +195,7 @@ const base64Decode = require('./')
 
   base64Decode('Zm9vYmE=', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -196,7 +204,7 @@ const base64Decode = require('./')
 
   base64Decode('Zm9vYmFy', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -205,7 +213,7 @@ const base64Decode = require('./')
 
   base64Decode('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==', expected)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -214,7 +222,7 @@ const base64Decode = require('./')
 
   base64Decode('SQ==QU0=', actual)
 
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
 
 {
@@ -222,8 +230,8 @@ const base64Decode = require('./')
   const expected = new Uint8Array([0xff, 0xff, 0xbe, 0xff, 0xef, 0xbf, 0xfb, 0xef, 0xff])
 
   base64Decode('//++/++/++//', actual)
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 
   base64Decode('__--_--_--__', actual)
-  assert.strictEqual(actual.join(), expected.join())
+  assertArrayEqual(actual, expected)
 }
