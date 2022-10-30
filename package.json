@@ -1,21 +1,26 @@
 {
   "name": "fast-base64-decode",
   "version": "1.0.0",
-  "license": "MIT",
-  "repository": "LinusU/fast-base64-decode",
-  "scripts": {
-    "test": "standard && node test"
-  },
-  "devDependencies": {
-    "standard": "^14.3.1"
-  },
   "keywords": [
     "base64-decode",
     "base64",
     "decode"
   ],
+  "repository": "LinusU/fast-base64-decode",
+  "license": "MIT",
+  "type": "module",
+  "exports": "./index.js",
   "files": [
     "index.d.ts",
     "index.js"
-  ]
+  ],
+  "scripts": {
+    "test": "standard && node test"
+  },
+  "devDependencies": {
+    "standard": "^17.0.0"
+  },
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  }
 }

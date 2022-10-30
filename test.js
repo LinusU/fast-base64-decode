@@ -1,5 +1,5 @@
-const assert = require('assert')
-const base64Decode = require('./')
+import assert from 'node:assert'
+import base64Decode from './index.js'
 
 function assertArrayEqual (actual, expected) {
   assert.strictEqual(actual.length, expected.length)

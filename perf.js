@@ -1,5 +1,5 @@
-const crypto = require('crypto')
-const base64Decode = require('./')
+import crypto from 'node:crypto'
+import base64Decode from './index.js'
 
 {
   // Warmup
